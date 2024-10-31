@@ -15,23 +15,23 @@ def cayley_graph(group, generators):
     return G, edges_by_generator
 
 # draw graph with colored edges
-def draw_graph_with_colored_edges(G, edges_by_generator):
-    plt.figure(figsize=(8, 6))
-    pos = nx.circular_layout(G)
-    colors = ['red', 'green', 'blue', 'purple', 'orange']
-    nx_G = nx.Graph()
-    for node, neighbors in G.items():
-        for neighbor in neighbors:
-            nx_G.add_edge(node, neighbor)
+# def draw_graph_with_colored_edges(G, edges_by_generator):
+#     plt.figure(figsize=(8, 6))
+#     pos = nx.circular_layout(G)
+#     colors = ['red', 'green', 'blue', 'purple', 'orange']
+#     nx_G = nx.Graph()
+#     for node, neighbors in G.items():
+#         for neighbor in neighbors:
+#             nx_G.add_edge(node, neighbor)
     
-    # draw network nodes with different colors
-    nx.draw(nx_G, pos, with_labels=True, node_color='lightblue', node_size=500, font_size=15)
+#     # draw network nodes with different colors
+#     nx.draw(nx_G, pos, with_labels=True, node_color='lightblue', node_size=500, font_size=15)
     
-    # draw network edges with different colors based on generators
-    for i, (gen, edges) in enumerate(edges_by_generator.items()):
-        nx.draw_networkx_edges(nx_G, pos, edgelist=edges, edge_color=colors[i % len(colors)], width=2, label=f'Generator {gen}')
+#     # draw network edges with different colors based on generators
+#     for i, (gen, edges) in enumerate(edges_by_generator.items()):
+#         nx.draw_networkx_edges(nx_G, pos, edgelist=edges, edge_color=colors[i % len(colors)], width=2, label=f'Generator {gen}')
     
-    plt.show()
+#     plt.show()
 
 # print generator paths in textual representation
 def print_generator_paths_text(generators, group_size):
